@@ -1,0 +1,38 @@
+[
+    {
+        "title" : "Cardiology Service",
+        "price" : "1200",
+        "img" : "https://github.com/maruf21hossain/life-care-image/blob/main/cardiology.jpg?raw=true",
+        "description" : "To make a diagnosis, cardiologists may give physical exams, order tests — such an electrocardiogram (EKG), blood tests, exercise stress tests — as well as interpret tests. They may also prescribe medicine, recommend lifestyle changes such as diet, exercise, reducing stress levels and managing weight"
+    },
+    {
+        "title" : "Neorology Service",
+        "price" : "1500",
+        "img" : "https://github.com/maruf21hossain/life-care-image/blob/main/Neurology.jpg?raw=true",
+        "description" : "Therapies for neurological disorders may often consist of: Lifestyle changes to either prevent or minimize the impact of such conditions. Physiotherapy to manage the symptoms and restore some function. Pain management, as many impairments can be associated with considerable discomfort."
+    },
+    {
+        "title" : "Nephrology Service",
+        "price" : "1000",
+        "img" : "https://github.com/maruf21hossain/life-care-image/blob/main/nephrology.jpg?raw=true",
+        "description" : "At that point, you need dialysis or a kidney transplant. Dialysis. Dialysis artificially removes waste products and extra fluid from your blood when your kidneys can no longer do this. In hemodialysis, a machine filters waste and excess fluids from your blood."
+    },
+    {
+        "title" : "Gastrology Service",
+        "price" : "960",
+        "img" : "https://github.com/maruf21hossain/life-care-image/blob/main/gastrology.jpg?raw=true",
+        "description" : "Prolonged or persistent abdominal pain or bloating may be reasons to see a gastroenterologist, particularly if symptoms re-emerge after nearly every meal or are accompanied by nausea or painful bowel movements"
+    },
+    {
+        "title" : "Pregnancy Service",
+        "price" : "1700",
+        "img" : "https://github.com/maruf21hossain/life-care-image/blob/main/pregnancy.jpg?raw=true",
+        "description" : "If you are considering becoming pregnant, or are pregnant, you should take a supplement with at least 400 micrograms (0.4 mg) of folic acid every day. Taking folic acid will decrease the risk for certain birth defects. Prenatal vitamins almost always contain more than 400 micrograms (0.4 mg) of folic acid per capsule or tablet."
+    },
+    {
+        "title" : "Bone Fractures Service",
+        "price" : "1600",
+        "img" : "https://github.com/maruf21hossain/life-care-image/blob/main/bone.jpg?raw=true",
+        "description" : "A plaster or fiberglass cast is the most common type of fracture treatment, because most broken bones can heal successfully once they have been repositioned and a cast has been applied to keep the broken ends in proper position while they heal."
+    }
+]
