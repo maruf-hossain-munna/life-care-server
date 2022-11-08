@@ -15,41 +15,62 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 // lifeCare   services
 async function run() {
-    try{
+    try {
         const serviceCollection = client.db('lifeCare').collection('services');
+        const reviewCollection = client.db('lifeCare').collection('reviews');
 
-        app.get('/services', async(req, res) =>{
+        app.get('/services', async (req, res) => {
             const query = {};
             const cursor = serviceCollection.find(query);
             const services = await cursor.limit(3).toArray();
             res.send(services);
         });
 
-        app.get('/allServices', async(req, res) =>{
+        app.get('/allServices', async (req, res) => {
             const query = {};
             const cursor = serviceCollection.find(query);
             const allServices = await cursor.toArray();
             res.send(allServices);
         })
 
-        app.get('/allServices/:id', async(req, res) =>{
+        app.get('/allServices/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const service = await serviceCollection.findOne(query);
             res.send(service)
         })
+
+        // reviews api 
+        app.get('/reviews', async(req, res) =>{
+            const query = {};
+            const cursor = reviewCollection.find(query);
+            const review = await cursor.toArray();
+            res.send(review);
+        })
+
+        app.post('/reviews', async (req, res) => {
+            const review = req.body;
+            const result = await reviewCollection.insertOne(review);
+            res.send(result)
+        })
+
+
     }
-    finally{
+    finally {
 
     }
 }
 run().catch(err => console.error(err))
 
 
-app.get('/', (req,res) =>{
+
+app.get('/', (req, res) => {
     res.send('Life care server is running');
 });
 
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log(`This server running on ${port}`);
 })
+
+
+
