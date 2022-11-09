@@ -81,7 +81,7 @@ async function run() {
             const query = { _id: ObjectId(id) };
             const updateDoc = {
                 $set: {
-                    reviewText : reviewText
+                    reviewText : reviewText.updateReviewText
                 }
             }
             const result = await reviewCollection.updateOne(query, updateDoc);
