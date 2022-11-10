@@ -39,14 +39,14 @@ async function run() {
         app.get('/services', async (req, res) => {
             const query = {};
             const cursor = serviceCollection.find(query);
-            const services = await cursor.limit(3).toArray();
+            const services = await cursor.sort({createDate : -1}).limit(3).toArray();
             res.send(services);
         });
 
         app.get('/allServices', async (req, res) => {
             const query = {};
             const cursor = serviceCollection.find(query);
-            const allServices = await cursor.toArray();
+            const allServices = await cursor.sort({createDate : -1}).toArray();
             res.send(allServices);
         })
 
@@ -67,9 +67,10 @@ async function run() {
 
         // reviews api 
         app.get('/reviews', async (req, res) => {
-            const query = {};
+            const id = req.query.id;
+            const query = { serviceId : id};
             const cursor = reviewCollection.find(query);
-            const review = await cursor.toArray();
+            const review = await cursor.sort({createDate : -1}).toArray();
             res.send(review);
         })
 
@@ -77,7 +78,7 @@ async function run() {
             const decoded = req.decoded;
             console.log('inside decoded', decoded);
             if( decoded.email !== req.query.email){
-                res.status(403).send({message : 'Forbidden Access'})
+                return res.status(403).send({message : 'Forbidden Access'})
             }
             let query = {};
             if (req.query.email) {
